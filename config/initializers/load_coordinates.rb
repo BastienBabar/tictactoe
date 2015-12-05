@@ -1,0 +1,1 @@
+APP_BOARD_COORDINATES = YAML.load_file("#{Rails.root}/config/board.yml")
