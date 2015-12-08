@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def get_coordinates(id)
-    [APP_BOARD_COORDINATES[id].x, APP_BOARD_COORDINATES[id].y]
+    [APP_BOARD_COORDINATES[id.to_i]['x'], APP_BOARD_COORDINATES[id.to_i]['y']]
   end
 end

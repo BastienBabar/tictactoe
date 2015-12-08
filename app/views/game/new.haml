@@ -1,2 +1,9 @@
-%h1 Game#init
-%p Find me in app/views/game/init.html.haml
+= form_tag(:init) do
+  .field
+    = label_tag :x, 'Player X'
+    = text_field_tag :x
+  .field
+    = label_tag :o, 'Player O'
+    = text_field_tag :o
+  .submit
+    = submit_tag 'New game'
