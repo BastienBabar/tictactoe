@@ -10,10 +10,10 @@ class PlayerList
   end
 
   def current
-    @players[@current_player]
+    @players[@current_player.to_i]
   end
 
   def next!
-    @current_player = (@current_player + 1) % 2
+    @current_player = (@current_player.to_i + 1) % 2
   end
 end
