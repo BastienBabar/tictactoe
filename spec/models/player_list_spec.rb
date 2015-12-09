@@ -16,7 +16,7 @@ RSpec.describe PlayerList, type: :model do
       end
     end
 
-    context 'next' do
+    context "next" do
       it do
         pl = PlayerList.new(x, o, 0)
         pl.next!
