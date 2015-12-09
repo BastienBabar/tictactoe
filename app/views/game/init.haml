@@ -1,21 +1,25 @@
-= form_tag(:turn, id: 'turn', remote: true) do
-  = hidden_field_tag 'id'
-  = submit_tag 'ok', class: 'turn_submit'
+.container
+  .block-form
+    = form_tag(:turn, id: 'turn', remote: true, class: 'form') do
+      = hidden_field_tag 'id'
+      = submit_tag 'ok', class: 'turn_submit'
 
-  #current_player
-    %div
-      = @players.current.name
-  #board
-    %table
-      %tr#row1
-        %td.square#0
-        %td.square.v#1
-        %td.square#2
-      %tr#row2
-        %td.square.h#3
-        %td.square.v.h#4
-        %td.square.h#5
-      %tr#row3
-        %td.square#6
-        %td.square.v#7
-        %td.square#8
+      #current_player.bg-primary
+        PLAYING
+        #k= @players.current.name
+        WITH
+        #symbol= @players.current.symbol
+      #board.block-form
+        %table.grid
+          %tr#row1
+            %td.square#0
+            %td.square.v#1
+            %td.square#2
+          %tr#row2
+            %td.square.h#3
+            %td.square.v.h#4
+            %td.square.h#5
+          %tr#row3
+            %td.square#6
+            %td.square.v#7
+            %td.square#8
