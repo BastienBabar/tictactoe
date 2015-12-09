@@ -1,4 +1,5 @@
 require 'matrix'
+
 class Board
   attr_accessor :matrix
 

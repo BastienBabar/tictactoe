@@ -12,7 +12,9 @@ class GameController < ApplicationController
 
   def turn
     @board = Board.new session['board']
-    @players = PlayerList.new session['players'][0]['name'], session['players'][1]['name'], session['current_player']
+    @players = PlayerList.new session['players'][0]['name'],
+                              session['players'][1]['name'],
+                              session['current_player']
     @coordinates = get_coordinates(params[:id]) #if id != nil or ""
     @symbol = @players.players[session['current_player'].to_i].symbol
 
@@ -22,7 +24,8 @@ class GameController < ApplicationController
     session['current_player'] = @players.current_player
 
     respond_to do |format|
-      format.json { render json: { board: @board, players: @players, current_player: @players.current, finished: @finished } }
+      format.json { render json: { board: @board, players: @players,
+                                   current_player: @players.current, finished: @finished } }
     end
   end
 

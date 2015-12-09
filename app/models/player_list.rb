@@ -1,5 +1,6 @@
 class PlayerList
   Player = Struct.new(:symbol, :name)
+
   attr_accessor :players, :current_player
 
   def initialize(x, o, current_player=0)
