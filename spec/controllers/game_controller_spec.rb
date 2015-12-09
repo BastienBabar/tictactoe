@@ -10,7 +10,7 @@ RSpec.describe GameController, type: :controller do
 
   describe "#init" do
     let(:params) do
-      ActionController::Parameters.new({ x: "Player x", o: "Player O" })
+      ActionController::Parameters.new(x: "Player x", o: "Player O")
     end
 
     before do
@@ -19,10 +19,9 @@ RSpec.describe GameController, type: :controller do
 
     context do
       before { post :init }
-
       it do
         board = Board.new
-        players =  PlayerList.new(params[:x], params[:o])
+        players = PlayerList.new(params[:x], params[:o])
         expect(response.status).to eq 200
         expect(assigns(:players).players[0].name).to eq params[:x]
         expect(assigns(:players).players[1].name).to eq params[:o]
@@ -36,7 +35,7 @@ RSpec.describe GameController, type: :controller do
 
   describe "#turn" do
     let(:params) do
-      ActionController::Parameters.new({ id: "1" })
+      ActionController::Parameters.new(id: "1")
     end
 
     before do
