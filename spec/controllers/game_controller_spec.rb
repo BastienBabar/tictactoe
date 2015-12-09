@@ -10,10 +10,7 @@ RSpec.describe GameController, type: :controller do
 
   describe "#init" do
     let(:params) do
-      ActionController::Parameters.new({
-                                           x: "Player x",
-                                           o: "Player O"
-                                       })
+      ActionController::Parameters.new({ x: "Player x", o: "Player O" })
     end
 
     before do
@@ -24,13 +21,15 @@ RSpec.describe GameController, type: :controller do
       before { post :init }
 
       it do
+        board = Board.new
+        players =  PlayerList.new(params[:x], params[:o])
         expect(response.status).to eq 200
         expect(assigns(:players).players[0].name).to eq params[:x]
         expect(assigns(:players).players[1].name).to eq params[:o]
-        expect(assigns(:board)).to eq Board.new.matrix
-        expect(request.session["board"]).to eq Board.new.matrix
-        expect(request.session["players"]).to eq PlayerList.new(params[:x],params[:o]).players
-        expect(request.session["current_player"]).to eq PlayerList.new(params[:x],params[:o]).current_player
+        expect(assigns(:board)).to eq board.matrix
+        expect(request.session["board"]).to eq board.matrix
+        expect(request.session["players"]).to eq players.players
+        expect(request.session["current_player"]).to eq players.current_player
       end
     end
   end
@@ -41,8 +40,9 @@ RSpec.describe GameController, type: :controller do
     end
 
     before do
+      players = PlayerList.new("Player X", "Player O", 0)
       request.session["board"] = Board.new.matrix.to_a
-      request.session["players"] = PlayerList.new("Player X", "Player O", 0).players
+      request.session["players"] = players.players
       request.session["current_player"] = "0"
       allow(controller).to receive(:params).and_return(params)
     end
@@ -53,7 +53,7 @@ RSpec.describe GameController, type: :controller do
       it do
         expect(response.status).to eq 200
         expect(assigns(:symbol)).to eq "x"
-        expect(assigns(:coordinates)).to eq [0,1]
+        expect(assigns(:coordinates)).to eq [0, 1]
         expect(assigns(:finished)).to eq false
         expect(request.session["current_player"]).to eq 1
       end
