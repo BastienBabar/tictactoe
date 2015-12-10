@@ -27,7 +27,7 @@ finish_game = (data) ->
   $('.modal').modal('toggle')
   $("#board").toggleClass("board-full")
   $('.new-game').show().removeClass('hide')
-  
+
   if(data.finished=="full")
     $('#game-result td.result').html('Tie...')
     $('#game-result tr.player').toggleClass('info')
