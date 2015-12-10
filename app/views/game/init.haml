@@ -1,8 +1,9 @@
 .container
   .block-form
-    = form_tag(:turn, id: 'turn', remote: true, class: 'form') do
-      = hidden_field_tag 'id'
-      = submit_tag 'ok', class: 'turn_submit'
+    -#= form_tag(:turn, id: 'turn', remote: true, class: 'form') do
+    -#  = hidden_field_tag 'id'
+    -#  = submit_tag 'ok', class: 'turn_submit'
+    .form
       %h1.page-header
         .bg-primary
           PLAYING
@@ -12,18 +13,20 @@
           %span#symbol= @players.current.symbol
 
       .block-form
-        .modal.fade{:role => "dialog", :tabindex => "-1"}
+        .modal.fade{ :role => "dialog", :tabindex => "-1" }
           .modal-dialog
             .modal-content
               .modal-header
-                %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-                  %span{"aria-hidden" => "true"} ×
+                %button.close{ "aria-label" => "Close",
+                               "data-dismiss" => "modal", :type => "button" }
+                  %span{ "aria-hidden" => "true" } ×
                 %h4.modal-title Game over!
               .modal-body
                 %p#over-message
               .modal-footer
-                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-                %button.btn.btn-primary.new-game{:type => "button"} New game!
+                %button.btn.btn-default{ "data-dismiss" => "modal",
+                                         :type => "button" } Close
+                %button.btn.btn-primary.new-game{ :type => "button" } New game!
         %table.grid#board
           %tr#row1
             %td.square#0
@@ -37,7 +40,7 @@
             %td.square#6
             %td.square.v#7
             %td.square#8
-      %button.btn.btn-primary.hide.new-game{:type => "button"} New game!
+      %button.btn.btn-primary.hide.new-game{ :type => "button" } New game!
 
   %table.table.table-responsive.table-bordered#game-result
     %thead
@@ -48,14 +51,14 @@
           Symbol
         %th
           Won?
-    %tr#p0.player
+    %tr.player#p0
       %td
         = @players.players[0].name
       %td
         = @players.players[0].symbol
       %td.result.hide
         Loser
-    %tr#p1.player
+    %tr.player#p1
       %td
         = @players.players[1].name
       %td

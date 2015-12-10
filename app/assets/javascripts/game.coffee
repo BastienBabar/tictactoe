@@ -15,7 +15,7 @@ $ ->
 
 turn = (data, id) ->
   sq = $('.square#'+id)
-  sq.toggleClass("square_" + data.symbol)
+  sq.toggleClass("square-" + data.symbol)
   sq.css("pointerEvents", "none")
   if data.finished
     finish_game(data)

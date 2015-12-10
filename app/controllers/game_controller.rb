@@ -26,7 +26,10 @@ class GameController < ApplicationController
 
     respond_to do |format|
       format.json do
-        render json: { players: @players, symbol: @symbol, name: @name, finished: @finished }
+        render json: {
+                   :players => @players, :symbol => @symbol,
+                   :name => @name, :finished => @finished
+                     }
       end
     end
   end
