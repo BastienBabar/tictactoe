@@ -20,7 +20,7 @@ class GameController < ApplicationController
     @name = @players.players[session["current_player"].to_i].name
 
     @finished = play @board, @coordinates, @symbol
-    @players.next!
+    @players.next! unless @finished
     session["players"] = @players.players
     session["current_player"] = @players.current_player
 

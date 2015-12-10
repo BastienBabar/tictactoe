@@ -10,6 +10,8 @@ $ ->
       context: e
     .done (data) ->
       turn data, this.toElement.id
+  $('.new-game').on 'click', (e) ->
+    location.href = "/"
 
 turn = (data, id) ->
   sq = $('.square#'+id)
@@ -22,10 +24,18 @@ turn = (data, id) ->
     $('#symbol').html(data.players.players[data.players.current_player].symbol)
 
 finish_game = (data) ->
+  $('.modal').modal('toggle')
   $("#board").toggleClass("board-full")
+  $('.new-game').show().removeClass('hide')
   switch(data.finished)
     when 'full'
-      alert "It's a tie!"
+      $('#game-result td.result').html('Tie...')
+      $('#game-result tr.player').toggleClass('info')
+      $('td.result').toggleClass('show').removeClass('hide')
+      $('#over-message').html("It's a tie!")
     else
-      alert data.name + " won!"
-
+      $('#game-result tr.player').toggleClass('danger')
+      $('td.result').toggleClass('show').removeClass('hide')
+      $('#p' + data.players.current_player).toggleClass('success').removeClass('danger')
+      $('#p' + data.players.current_player + ' td.result').html('Winner!')
+      $('#over-message').html(data.name + " won the game!")
