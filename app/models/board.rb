@@ -13,7 +13,7 @@ class Board
 
   def finished?(symbol)
     if won? symbol
-      symbol
+      true
     elsif board_full?
       'full'
     else

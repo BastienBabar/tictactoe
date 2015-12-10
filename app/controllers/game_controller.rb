@@ -17,6 +17,7 @@ class GameController < ApplicationController
                               session["current_player"]
     @coordinates = get_coordinates(params[:id]) #if id != nil or ""
     @symbol = @players.players[session["current_player"].to_i].symbol
+    @name = @players.players[session["current_player"].to_i].name
 
     @finished = play @board, @coordinates, @symbol
     @players.next!
@@ -25,7 +26,7 @@ class GameController < ApplicationController
 
     respond_to do |format|
       format.json do
-        render json: { players: @players, finished: @finished }
+        render json: { players: @players, symbol: @symbol, name: @name, finished: @finished }
       end
     end
   end

@@ -3,12 +3,14 @@
     = form_tag(:turn, id: 'turn', remote: true, class: 'form') do
       = hidden_field_tag 'id'
       = submit_tag 'ok', class: 'turn_submit'
+      %h1.page-header
+        .bg-primary
+          PLAYING
+          %span#player= @players.current.name
+        .bg-primary
+          WITH SYMBOL
+          %span#symbol= @players.current.symbol
 
-      #current_player.bg-primary
-        PLAYING
-        #k= @players.current.name
-        WITH
-        #symbol= @players.current.symbol
       #board.block-form
         %table.grid
           %tr#row1
@@ -23,3 +25,21 @@
             %td.square#6
             %td.square.v#7
             %td.square#8
+
+  .hide
+    %table.table.table-responsive.table-bordered
+      %thead
+        %tr
+          %th
+            Name
+          %th
+            Symbol
+          %th
+            Won?
+      %tr.success
+        %td
+          1
+        %td
+          2
+        %td
+          3

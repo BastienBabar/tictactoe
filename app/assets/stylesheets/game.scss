@@ -39,9 +39,20 @@
 }
 
 .square_x:after {
-  content: 'X';
+  content: "X";
+  font-size: xx-large;
 }
 
 .square_o:after {
-  content: 'O';
+  content: "O";
+  font-size: xx-large;
+}
+
+.board-full {
+  pointer-events: none;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
 }
