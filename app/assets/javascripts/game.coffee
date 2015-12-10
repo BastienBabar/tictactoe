@@ -27,15 +27,16 @@ finish_game = (data) ->
   $('.modal').modal('toggle')
   $("#board").toggleClass("board-full")
   $('.new-game').show().removeClass('hide')
-  switch(data.finished)
-    when 'full'
-      $('#game-result td.result').html('Tie...')
-      $('#game-result tr.player').toggleClass('info')
-      $('td.result').toggleClass('show').removeClass('hide')
-      $('#over-message').html("It's a tie!")
-    else
-      $('#game-result tr.player').toggleClass('danger')
-      $('td.result').toggleClass('show').removeClass('hide')
-      $('#p' + data.players.current_player).toggleClass('success').removeClass('danger')
-      $('#p' + data.players.current_player + ' td.result').html('Winner!')
-      $('#over-message').html(data.name + " won the game!")
+  
+  if(data.finished=="full")
+    $('#game-result td.result').html('Tie...')
+    $('#game-result tr.player').toggleClass('info')
+    $('td.result').toggleClass('show').removeClass('hide')
+    $('#over-message').html("It's a tie!")
+  else
+    $('#game-result tr.player').toggleClass('danger')
+    $('td.result').toggleClass('show').removeClass('hide')
+    current = $('#p' + data.players.current_player)
+    current.toggleClass('success').removeClass('danger')
+    $('#p' + data.players.current_player + ' td.result').html('Winner!')
+    $('#over-message').html(data.name + " won the game!")
