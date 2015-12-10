@@ -1,21 +1,54 @@
 // Place all the styles related to the Game controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.square{
+.block-form {
+  padding: 25px;
+  text-align: center;
+}
+
+.form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.grid {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.square {
   width:100px;
   height:100px;
 }
 
-.v{
+.v {
   border-left:1px solid #000;
   border-right:1px solid #000;
 }
 
-.h{
+.h {
   border-top:1px solid #000;
   border-bottom:1px solid #000;
 }
 
-.turn_submit{
-  display: none;
+.square-x:after {
+  content: "X";
+  font-size: xx-large;
+}
+
+.square-o:after {
+  content: "O";
+  font-size: xx-large;
+}
+
+.board-full {
+  -moz-filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  pointer-events: none;
 }

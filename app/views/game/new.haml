@@ -1,9 +1,9 @@
-= form_tag(:init) do
-  .field
-    = label_tag :x, 'Player X'
-    = text_field_tag :x
-  .field
-    = label_tag :o, 'Player O'
-    = text_field_tag :o
-  .submit
-    = submit_tag 'New game'
+.block-form.container
+  = form_tag(:init, class: 'form') do
+    .form-group
+      = text_field_tag :x, nil, class: 'form-control',
+      placeholder: 'Name for X', required: true
+    .form-group
+      = text_field_tag :o, nil, class: 'form-control',
+      placeholder: 'Name for O', required: true
+    = submit_tag 'Start game', class: 'btn btn-primary'
