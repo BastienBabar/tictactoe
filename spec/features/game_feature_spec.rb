@@ -1,6 +1,6 @@
 require "rspec"
 
-feature "play the tic tac toe", :type => :feature, js: true do
+feature "play the tic tac toe", js: true do
   context "from the new game page" do
     before do
       visit root_path
@@ -41,8 +41,8 @@ feature "play the tic tac toe", :type => :feature, js: true do
 end
 
 def form
-  fill_in "x", :with => "Player X"
-  fill_in "o", :with => "Player O"
+  fill_in "x", with: "Player X"
+  fill_in "o", with: "Player O"
   click_button("Start game")
 end
 

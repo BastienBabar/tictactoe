@@ -23,7 +23,7 @@ RSpec.configure do |config|
                                       js_errors: false,
                                       phantomjs_options: ["--proxy-type=none"],
                                       timeout: 180,
-                                      :phantomjs_logger => File.open("#{Rails.root}/log/test_phantomjs.log", "a"),
+                                      phantomjs_logger: File.open("#{Rails.root}/log/test_phantomjs.log", "a"),
                                       extensions: [])
   end
 
