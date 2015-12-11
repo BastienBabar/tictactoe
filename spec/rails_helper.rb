@@ -32,7 +32,7 @@ RSpec.configure do |config|
   Capybara.default_wait_time = 5
 
   Capybara::Screenshot.register_filename_prefix_formatter(:rspec) do |example|
-    "screenshot-#{example.description.gsub(" ", "-").delete(",").gsub("/", "-").delete("\"")}"
+    "screenshot-#{example.description.tr(' ', '-').delete(',').tr('/', '-').delete('"')}"
   end
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
