@@ -1,6 +1,6 @@
-require 'rspec'
+require "rspec"
 
-feature 'play the tic tac toe', :type => :feature, js: true do
+feature "play the tic tac toe", :type => :feature, js: true do
 
   context "from the new game page" do
     before do
@@ -43,39 +43,39 @@ feature 'play the tic tac toe', :type => :feature, js: true do
 end
 
 def form
-  fill_in 'x', :with => "Player X"
-  fill_in 'o', :with => "Player O"
+  fill_in "x", :with => "Player X"
+  fill_in "o", :with => "Player O"
   click_button("Start game")
 end
 
 def x_winning
-  find_by_id('0').click
+  find_by_id("0").click
   sleep 1
-  find_by_id('1').click
+  find_by_id("1").click
   sleep 1
-  find_by_id('4').click
+  find_by_id("4").click
   sleep 1
-  find_by_id('2').click
+  find_by_id("2").click
   sleep 1
-  find_by_id('8').click
+  find_by_id("8").click
 end
 
 def tie
-  find_by_id('4').click
+  find_by_id("4").click
   sleep 1
-  find_by_id('5').click
+  find_by_id("5").click
   sleep 1
-  find_by_id('1').click
+  find_by_id("1").click
   sleep 1
-  find_by_id('7').click
+  find_by_id("7").click
   sleep 1
-  find_by_id('3').click
+  find_by_id("3").click
   sleep 1
-  find_by_id('0').click
+  find_by_id("0").click
   sleep 1
-  find_by_id('6').click
+  find_by_id("6").click
   sleep 1
-  find_by_id('2').click
+  find_by_id("2").click
   sleep 1
-  find_by_id('8').click
+  find_by_id("8").click
 end
