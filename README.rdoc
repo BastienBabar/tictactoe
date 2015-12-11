@@ -1,28 +1,25 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Bunlde install
 
-Things you may want to cover:
+* Ruby version: 2.2.3
 
-* Ruby version
+* No database, no need to run migration
 
-* System dependencies
+* Tests run: rspec (100% coverage with simplecov)
 
-* Configuration
+* Using Haml, Sass, CoffeeScript and bootstrap
 
-* Database creation
+== ToDo
 
-* Database initialization
+* Implement AngularJS framework
 
-* How to run the test suite
+* Add database and handle users
 
-* Services (job queues, cache servers, search engines, etc.)
+* Improve objects to make it scalable (eg. build bigger board)
 
-* Deployment instructions
+* Design is poor
 
-* ...
+* Guard configuration
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Handle validation to securely stop the game when finished

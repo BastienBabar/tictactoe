@@ -3,6 +3,7 @@ class PlayerList
 
   attr_accessor :players, :current_player
 
+  # create a player list to handle user switch
   def initialize(x, o, current_player=0)
     p1 = Player.new('x', x)
     p2 = Player.new('o', o)
@@ -14,6 +15,7 @@ class PlayerList
     @players[@current_player.to_i]
   end
 
+  # just rise the index to go following player
   def next!
     @current_player = (@current_player.to_i + 1) % 2
   end

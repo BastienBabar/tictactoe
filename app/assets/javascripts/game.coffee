@@ -1,6 +1,4 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+# click on a square event to play
 $ ->
   $('.square').on 'click', (e) ->
     $.ajax
@@ -13,6 +11,7 @@ $ ->
   $('.new-game').on 'click', (e) ->
     location.href = "/"
 
+# turn function that is handling frontend changes after ajax request successed
 turn = (data, id) ->
   sq = $('.square#'+id)
   sq.toggleClass("square-" + data.symbol)
@@ -23,11 +22,11 @@ turn = (data, id) ->
     $('#player').html(data.players.players[data.players.current_player].name)
     $('#symbol').html(data.players.players[data.players.current_player].symbol)
 
+# finish function that is closing the game
 finish_game = (data) ->
   $('.modal').modal('toggle')
   $("#board").toggleClass("board-full")
   $('.new-game').show().removeClass('hide')
-
   if(data.finished=="full")
     $('#game-result td.result').html('Tie...')
     $('#game-result tr.player').toggleClass('info')
