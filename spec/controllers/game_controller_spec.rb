@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe GameController, type: :controller do
-
   describe "#new" do
     context do
       before { get :new }
@@ -59,5 +58,4 @@ RSpec.describe GameController, type: :controller do
       end
     end
   end
-
 end

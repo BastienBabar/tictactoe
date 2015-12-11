@@ -1,14 +1,13 @@
 require "rspec"
 
 feature "play the tic tac toe", :type => :feature, js: true do
-
   context "from the new game page" do
     before do
       visit root_path
       form
     end
 
-    context "start a new game"  do
+    context "start a new game" do
       it { expect(page).to have_text("Player X") }
       it { expect(page).to have_selector("#board") }
     end
@@ -17,14 +16,14 @@ feature "play the tic tac toe", :type => :feature, js: true do
       before do
         x_winning
       end
-      it {expect(page).to have_text("Player X won the game")}
+      it { expect(page).to have_text("Player X won the game") }
     end
 
     context "tie" do
       before do
         tie
       end
-      it {expect(page).to have_text("It's a tie")}
+      it { expect(page).to have_text("It's a tie") }
     end
 
     context "restart a new game" do
@@ -39,7 +38,6 @@ feature "play the tic tac toe", :type => :feature, js: true do
       end
     end
   end
-
 end
 
 def form
