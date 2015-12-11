@@ -21,7 +21,7 @@ class GameController < ApplicationController
     @players = PlayerList.new session["players"][0]["name"],
                               session["players"][1]["name"],
                               session["current_player"]
-    @coordinates = get_coordinates(params[:id]) #add - if id != nil or "" or not in list
+    @coordinates = get_coordinates(params[:id]) # if nil or "" or not in list
     @symbol = @players.players[session["current_player"].to_i].symbol
     @name = @players.players[session["current_player"].to_i].name
 

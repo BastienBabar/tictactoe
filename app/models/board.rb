@@ -28,10 +28,12 @@ class Board
   def board_full?
     self.fields.all? { |field| self.marked?(field) }
   end
+
   # is there any '_' left?
   def marked?(field)
     @matrix[*field] != '_'
   end
+
   # get all fields in the Matrix object
   def fields
     @matrix.each_with_index.map { |_, *field| field }
@@ -43,6 +45,7 @@ class Board
       winning_adjacency?(symbol, sequence)
     end
   end
+
   # any sequence sent is true?
   # checking rows, columns and diagonals
   def winning_adjacency?(symbol, sequence)
