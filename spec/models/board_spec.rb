@@ -46,7 +46,7 @@ RSpec.describe Board, type: :model do
         before { b = Board.new(matrix_winning) }
         it do
           finished = b.finished?("x")
-          expect(finished).to eq "x"
+          expect(finished).to eq true
         end
       end
     end

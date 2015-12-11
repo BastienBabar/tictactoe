@@ -32,10 +32,6 @@ class GameController < ApplicationController
     end
   end
 
-  def over
-    render "over"
-  end
-
   private
 
   def play(b, cd, sym)
