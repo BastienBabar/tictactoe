@@ -12,7 +12,7 @@
 
 * Using Haml, Sass, CoffeeScript and bootstrap
 
-== ToDo
+## ToDo
 
 * Implement AngularJS framework
 
