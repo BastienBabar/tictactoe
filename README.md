@@ -1,5 +1,7 @@
 [![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/BastienBabar/tic-tac-toe)
 
+[![Coverage Status](https://coveralls.io/repos/github/BastienBabar/tictactoe/badge.svg?branch=master)](https://coveralls.io/github/BastienBabar/tictactoe?branch=master)
+
 ## README
 
 * Bunlde install

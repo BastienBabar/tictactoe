@@ -22,6 +22,7 @@ group :test do
   gem 'capybara-screenshot'
   gem 'simplecov'
   gem 'rails-controller-testing'
+  gem 'coveralls', require: false
 end
 
 group :development, :test do
