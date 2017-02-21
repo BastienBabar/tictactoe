@@ -2,6 +2,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/BastienBabar/tictactoe/badge.svg?branch=master)](https://coveralls.io/github/BastienBabar/tictactoe?branch=master)
 
+[![Codeship Status for BastienBabar/tictactoe](https://app.codeship.com/projects/e4a87630-da69-0134-d6f9-3e892a3f83ae/status?branch=master)](https://app.codeship.com/projects/203654)
+
 ## README
 
 * Bunlde install
